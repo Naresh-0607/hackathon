@@ -6,179 +6,221 @@
   <title>AI & Data Science Hackathon 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0a0a0a;
-      color: white;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between; /* pushes left and right apart */
-      align-items: center;
-      position: fixed;
-      padding: 1rem 2rem;
-      background: rgba(0, 0, 0, 0.8);
-      top: 0;
-      width: 100%;
-      z-index: 10; 
-    }
-    .navbar h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 5rem;
-      color: #E50914;
-      animation: glow 15s infinite alternate;
-    }
+    html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+  }
 
-    /* Header */
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.34);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+  }
+  .nav-left{
+    margin-top: 20px;
+  }
 
-    /* Logo */
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 15px; /* space between logo and text */
-    }
-    .nav-right img {
-      padding: 20px;
-      display: block;
-    }
+  /* Centering helper for nav */
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b') center center / cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-      padding-top: 4rem;
-    }
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b') center / cover no-repeat;
+  }
+  .hero h1{
+    font-size: medium;
+  }
 
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(10, 10, 10, 0.7);
-      top: 0;
-      left: 0;
-    }
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 10, 10, 0.7);
+  }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
 
+  /* Logo in hero */
+  .creonix-logo {
+    position: relative; /* stays in hero flow initially */
+    margin-top: 20px; /* space under countdown */
+    transition: all 0.6s ease-in-out;
+    z-index: 2000;
+  }
+
+  .creonix-logo img {
+    width: 350px;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .creonix-logo.sticky {
+    position: fixed;
+    top: 1px;
+    right: 2px;
+    margin-top: 0;
+    z-index: 2000;
+  }
+
+  .creonix-logo.sticky img {
+    width: 140px;
+  }
+
+
+  /* Hero text */
+  .hero h1 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  /* Countdown Timer Styling */
+  .countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .time-box {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    width: 100px;
+  }
+
+  .time-box span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: red;
+  }
+
+  .label {
+    font-size: 1rem;
+    color: white;
+  }
+  ul li::marker {
+    color: red; /* Only bullet changes color */
+    font-size: 1.2em; /* Optional: make bullets bigger */
+  }
+  /* Button */
+  .glow-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #E50914, #ff4d4d);
+    border-radius: 8px;
+    box-shadow: 0 0 15px #E50914, 0 0 30px #ff4d4d;
+    transition: transform 0.2s ease-in-out;
+    animation: glowPulse 2s infinite alternate;
+  }
+
+  .glow-btn:hover {
+    transform: scale(1.08);
+  }
+
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 10px #E50914, 0 0 20px #ff4d4d, 0 0 30px #E50914;
+    }
+    100% {
+      box-shadow: 0 0 20px #ff4d4d, 0 0 40px #E50914, 0 0 60px #ff4d4d;
+    }
+  }
+  .register-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #E50914;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .register-btn:hover {
+    background-color: #b20710; /* Darker shade on hover */
+  }
+
+
+
+
+  /* Footer */
+  footer {
+    background: #121212;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .hero h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 5rem;
-      color: #E50914;
-      animation: glow 15s infinite alternate;
+      font-size: 2rem;
     }
-
-    .hero p {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-    }
-
-    /* Countdown Timer Styling */
     .countdown {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin: 1rem 0;
+      flex-wrap: wrap;
     }
     .time-box {
-      background-color: rgba(255, 0, 0, 0.1);
-      border: 1px solid red;
-      border-radius: 10px;
-      padding: 20px 10px;
-      text-align: center;
-      width: 100px;
+      width: 80px;
+      padding: 15px 5px;
     }
-    .time-box span {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: red;
-    }
-    .label {
-      font-size: 1rem;
-      color: white;
-    }
+  }
+</style>
 
-    .btn {
-      display: inline-block;
-      background: #E50914;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .btn:hover {
-      background: #ff1a2a;
-      transform: scale(1.05);
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #E50914; }
-      to { text-shadow: 0 0 20px #ff4d4d; }
-    }
-
-    /* Footer */
-    footer {
-      background: #121212;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .countdown {
-        flex-wrap: wrap;
-      }
-      .time-box {
-        width: 80px;
-        padding: 15px 5px;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <header>
     <nav class="navbar">
-    <div class="nav-left">
-      <img src="easwari.png" width="350" height="100" />
-    </div>
-    <div>
-      <h1 class="sticky-banner">CREONIX '25</h1>
-    </div>
-    <div class="nav-right">
-      <img src="creonix.png" width="100" height="100" />
-    </div>
-  </nav>
+      <div class="nav-left">
+        <img src="easwari.png" width="160" height="80" />
+      </div>
+      <div class="nav-right"></div>
+    </nav>
   </header>
-
-  <!-- Hero Section -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      
-      <p>Innovate. Collaborate. Dominate.</p>
-
-      <!-- New Styled Countdown -->
+      <div class="creonix-logo">
+        <img src="creonix.png" alt="CREONIX '25 Logo">
+      </div>
+      <h1>Innovate. Collaborate. Dominate.</h1>
       <div class="countdown">
         <div class="time-box">
           <span id="days">00</span>
@@ -197,11 +239,54 @@
           <div class="label">Seconds</div>
         </div>
       </div>
-
-      <a href="registration.html" class="btn">Register Now</a>
+  </section>
+  <!-- About Section -->
+  <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
+    <h2 style="color: #E50914; font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">About CREONIX '25</h2>
+    <ul style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.6; text-align: left; list-style-type: square; padding-left: 40px;">
+        <li style="line-height: 2; word-spacing: 5px;">CREONIX ’25 is the flagship National Level Hackathon organized by the Department of Artificial Intelligence and Data Science, Easwari Engineering College. This prestigious annual event brings together the brightest young innovators, coders, and problem-solvers from across the country to address real-world challenges through creativity, collaboration, and cutting-edge technology.</li>
+      </ul>
+  </section>
+  <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
+    <div>
+      <a href="#registration-section" class="glow-btn">Register Now</a>
     </div>
+  </section> 
+   <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
+    <h2 style="color: #E50914; font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">About Nokia</h2>
+
+    <div>
+        <img src="nokia-grp.jpg" width="400px" height="250px">
+    </div><br>
+      <ul style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.6; text-align: left; list-style-type: square; padding-left: 40px;">
+        <li style="line-height: 2; word-spacing: 5px;">As part of the National Level Hackathon 2025 at Easwari Engineering College, Nokia has contributed a real-world problem statement to challenge participants and spark innovative, industry-ready solutions. This initiative gives students the chance to apply their technical knowledge, creativity, and problem-solving skills to address practical challenges in the tech industry.</li>
+        <li style="line-height: 2; word-spacing: 5px;">Nokia is a global leader in telecommunications and networking with a legacy of over 150 years. From its origins in Finland in 1865 to pioneering mobile communications and leading advancements in 5G, cloud networking, and IoT, Nokia continues to shape the future of connectivity. Guided by the mission “to create technology that helps the world act together”, Nokia powers critical networks worldwide and actively supports talent development through collaborations with educational and research institutions.</li>
+      </ul>
   </section>
 
+  <section id="registration-section" style="padding: 3rem 2rem; background-color: #111; color: white;">
+    <h2 style="color: #E50914; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; text-align: center;">
+      Basic Rules & Regulations
+    </h2>
+
+    <ul style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.8; list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">1.</span> Team Size: 2–5 members per team.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">2.</span> Eligibility: Open to students from all institutions across the nation.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">3.</span> Originality: All work must be original; plagiarism will lead to disqualification.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">4.</span> Development Time: All coding and development must be done during the hackathon.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">5.</span> Tools & Resources: Participants may use open-source libraries, APIs, and frameworks.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">6.</span> Judging: Decisions by the judging panel are final and binding.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">7.</span> Code Submission: Final code must be submitted before the presentation round.</li>
+      <li style="margin-bottom: 10px;"><span style="color: #E50914;">8.</span> Conduct: Professional behavior is expected throughout the event.</li>
+    </ul>
+  </section>
+  <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
+    <div>
+      <h1>Click here for registration👇</h1>
+      <a href="https://forms.gle/MrKGJPd69vsWhieGA" class="register-btn">CREONIX '25</a>
+    </div>
+  </section> 
+  
   <!-- Footer -->
   <footer>
     <p>© 2025 Easwari Engineering College | CREONIX '25 | Artificial Intelligence and Data Science</p>
@@ -236,6 +321,23 @@
 
     const timer = setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    const logo = document.querySelector('.creonix-logo');
+    const heroSection = document.querySelector('.hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (window.scrollY > heroBottom - 150) {
+        logo.classList.add('sticky');
+      } else {
+        logo.classList.remove('sticky');
+      }
+    });
+
+
+
+
+
   </script>
 
 </body>
