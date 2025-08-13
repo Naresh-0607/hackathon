@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI & Data Science Hackathon 2025</title>
+  <title>Techathon'25</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     html {
@@ -16,6 +16,12 @@
       color: white;
     }
 
+    .main{
+        background-color: rgba(0, 0, 0, 0.822);
+        padding: 70px;
+        border-radius: 20px;
+        border: 2px solid rgb(0, 60, 255);
+    }
     /* Navbar */
     .navbar {
       display: flex;
@@ -41,7 +47,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b') center / cover no-repeat;
+      background: url('back.gif') center / cover no-repeat;
     }
     .hero h1{
       font-size: medium;
@@ -51,7 +57,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(10, 10, 10, 0.7);
+      background: rgba(10, 10, 10, 0);
     }
 
     .hero-content {
@@ -181,15 +187,17 @@
     <nav class="navbar">
       <div class="nav-left">
         <img src="easwari.png" width="160" height="80" />
+        <img src="nokia.png" width="160" height="80"/>
       </div>
       <div class="nav-right"></div>
     </nav>
-  </header>6
+  </header>
   <section class="hero">
-    <div class="overlay"></div>
+    <div class="main">
+        <div class="overlay"></div>
     <div class="hero-content">
       <div class="creonix-logo">
-        <img src="creonix.png" alt="CREONIX '25 Logo">
+        <img src="techathon final.png" alt="CREONIX '25 Logo">
       </div>
       <h1>Innovate. Collaborate. Dominate.</h1>
       <div class="countdown">
@@ -210,12 +218,13 @@
           <div class="label">Seconds</div>
         </div>
       </div>
+    </div>
   </section>
   <!-- About Section -->
   <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
-    <h2 style="color: #007BFF; font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">About CREONIX '25</h2>
+    <h2 style="color: #007BFF; font-family: 'Orbitron', sans-serif; font-size: 2.5rem;">About TECHATHON '25</h2>
     <ul style="max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.6; text-align: left; list-style-type: square; padding-left: 40px;">
-        <li style="line-height: 2; word-spacing: 5px;">CREONIX ’25 is the flagship National Level Hackathon organized by the Department of Artificial Intelligence and Data Science, Easwari Engineering College. This prestigious annual event brings together the brightest young innovators, coders, and problem-solvers from across the country to address real-world challenges through creativity, collaboration, and cutting-edge technology.</li>
+        <li style="line-height: 2; word-spacing: 5px;">TECHATHON ’25 is the flagship National Level Hackathon organized by the Department of Artificial Intelligence and Data Science, Easwari Engineering College. This prestigious annual event brings together the brightest young innovators, coders, and problem-solvers from across the country to address real-world challenges through creativity, collaboration, and cutting-edge technology.</li>
       </ul>
   </section>
   <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
@@ -254,7 +263,7 @@
   <section style="padding: 3rem 2rem; background-color: #111; text-align: center;">
     <div>
       <h1>Click here for registration👇</h1>
-      <a href="https://forms.gle/MrKGJPd69vsWhieGA" class="register-btn">CREONIX '25</a>
+      <a href="https://forms.gle/MrKGJPd69vsWhieGA" class="register-btn">TECHATHON '25</a>
     </div>
   </section> 
   
@@ -264,7 +273,7 @@
   </footer>
 
   <script>
-    const targetDate = new Date("September 23, 2025 09:00:00").getTime();
+    const targetDate = new Date("September 23, 2025 10:00:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
